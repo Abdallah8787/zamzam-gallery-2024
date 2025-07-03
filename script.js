@@ -8,56 +8,110 @@ const sampleImages = [
     {
         src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
         title: 'منظر طبيعي خلاب',
-        description: 'جبال وسحب في منظر طبيعي رائع',
-        category: 'nature'
+        description: 'جبال وسحب في منظر طبيعي رائع مع إضاءة ذهبية جميلة',
+        category: 'nature',
+        type: 'photo',
+        brand: 'canon',
+        tags: ['جبال', 'طبيعة', 'سحب']
     },
     {
         src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
         title: 'غابة كثيفة',
-        description: 'أشجار خضراء في غابة طبيعية',
-        category: 'nature'
+        description: 'أشجار خضراء في غابة طبيعية مع أشعة الشمس المتسللة',
+        category: 'nature',
+        type: 'photo',
+        brand: 'nikon',
+        tags: ['غابة', 'أشجار', 'ضوء']
     },
     {
         src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop',
         title: 'بحيرة هادئة',
-        description: 'مياه صافية تعكس السماء الزرقاء',
-        category: 'landscape'
+        description: 'مياه صافية تعكس السماء الزرقاء في هدوء تام',
+        category: 'landscape',
+        type: 'photo',
+        brand: 'sony',
+        tags: ['بحيرة', 'انعكاس', 'هدوء']
     },
     {
         src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&h=600&fit=crop',
         title: 'شروق الشمس',
-        description: 'شروق جميل فوق الجبال',
-        category: 'landscape'
+        description: 'شروق جميل فوق الجبال مع ألوان دافئة رائعة',
+        category: 'landscape',
+        type: 'photo',
+        brand: 'fuji',
+        tags: ['شروق', 'جبال', 'ألوان']
     },
     {
         src: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=600&fit=crop',
         title: 'بحر هادئ',
-        description: 'أمواج هادئة على الشاطئ',
-        category: 'nature'
+        description: 'أمواج هادئة على الشاطئ مع رمال ذهبية ناعمة',
+        category: 'nature',
+        type: 'photo',
+        brand: 'olympus',
+        tags: ['بحر', 'شاطئ', 'أمواج']
     },
     {
         src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
         title: 'قمة جبلية',
-        description: 'منظر من أعلى قمة جبلية',
-        category: 'landscape'
+        description: 'منظر من أعلى قمة جبلية يطل على الوديان',
+        category: 'landscape',
+        type: 'photo',
+        brand: 'canon',
+        tags: ['قمة', 'وديان', 'ارتفاع']
     },
     {
         src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop',
         title: 'نجوم الليل',
-        description: 'سماء مليئة بالنجوم اللامعة',
-        category: 'nature'
+        description: 'سماء مليئة بالنجوم اللامعة في ليلة صافية',
+        category: 'nature',
+        type: 'photo',
+        brand: 'nikon',
+        tags: ['نجوم', 'ليل', 'سماء']
     },
     {
         src: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=600&fit=crop',
         title: 'حقل أخضر',
-        description: 'حقل واسع من العشب الأخضر',
-        category: 'landscape'
+        description: 'حقل واسع من العشب الأخضر تحت سماء زرقاء',
+        category: 'landscape',
+        type: 'photo',
+        brand: 'sony',
+        tags: ['حقل', 'أخضر', 'واسع']
     },
     {
         src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
         title: 'شلال طبيعي',
-        description: 'مياه متدفقة من شلال عالي',
-        category: 'nature'
+        description: 'مياه متدفقة من شلال عالي وسط الصخور',
+        category: 'nature',
+        type: 'photo',
+        brand: 'fuji',
+        tags: ['شلال', 'مياه', 'صخور']
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
+        title: 'مدينة حديثة',
+        description: 'ناطحات سحاب في مدينة حديثة مع إضاءة ليلية',
+        category: 'urban',
+        type: 'photo',
+        brand: 'canon',
+        tags: ['مدينة', 'ناطحات', 'ليل']
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&h=600&fit=crop',
+        title: 'حيوان بري',
+        description: 'حيوان في بيئته الطبيعية البرية',
+        category: 'wildlife',
+        type: 'photo',
+        brand: 'nikon',
+        tags: ['حيوان', 'بري', 'طبيعة']
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
+        title: 'لوحة رقمية',
+        description: 'عمل فني رقمي بألوان زاهية ومتدرجة',
+        category: 'nature',
+        type: 'digital',
+        brand: 'digital',
+        tags: ['رقمي', 'فن', 'ألوان']
     }
 ];
 
@@ -647,4 +701,585 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
+// Developer Functions
+let developerSettings = {
+    socialLinks: {
+        facebook: '',
+        twitter: '',
+        instagram: '',
+        youtube: ''
+    },
+    colors: {
+        primary: '#667eea',
+        secondary: '#764ba2',
+        accent: '#f093fb'
+    },
+    background: {
+        type: 'gradient',
+        gradientStart: '#667eea',
+        gradientEnd: '#764ba2',
+        gradientDirection: '135deg',
+        image: null,
+        pattern: 'dots'
+    }
+};
+
+// Load saved settings
+function loadDeveloperSettings() {
+    const saved = localStorage.getItem('developerSettings');
+    if (saved) {
+        developerSettings = { ...developerSettings, ...JSON.parse(saved) };
+        applySettings();
+    }
+}
+
+// Save settings
+function saveDeveloperSettings() {
+    localStorage.setItem('developerSettings', JSON.stringify(developerSettings));
+}
+
+// Apply settings to the page
+function applySettings() {
+    // Apply colors
+    document.documentElement.style.setProperty('--primary-color', developerSettings.colors.primary);
+    document.documentElement.style.setProperty('--secondary-color', developerSettings.colors.secondary);
+    document.documentElement.style.setProperty('--accent-color', developerSettings.colors.accent);
+    
+    // Apply background
+    applyBackgroundSettings();
+    
+    // Apply social links
+    applySocialLinks();
+}
+
+function applyBackgroundSettings() {
+    const body = document.body;
+    
+    switch (developerSettings.background.type) {
+        case 'gradient':
+            body.style.background = `linear-gradient(${developerSettings.background.gradientDirection}, ${developerSettings.background.gradientStart}, ${developerSettings.background.gradientEnd})`;
+            break;
+        case 'image':
+            if (developerSettings.background.image) {
+                body.style.background = `url(${developerSettings.background.image}) center/cover fixed`;
+            }
+            break;
+        case 'pattern':
+            applyPatternBackground();
+            break;
+    }
+}
+
+function applyPatternBackground() {
+    const body = document.body;
+    const patterns = {
+        dots: 'radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 2px)',
+        lines: 'linear-gradient(45deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+        grid: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)'
+    };
+    
+    const sizes = {
+        dots: '20px 20px',
+        lines: '15px 15px',
+        grid: '30px 30px'
+    };
+    
+    body.style.background = `${developerSettings.colors.primary}, ${patterns[developerSettings.background.pattern]}`;
+    body.style.backgroundSize = `100%, ${sizes[developerSettings.background.pattern]}`;
+}
+
+function applySocialLinks() {
+    // Update footer social links
+    const socialLinks = document.querySelectorAll('.social-links a');
+    const linkMap = {
+        0: 'facebook',
+        1: 'twitter', 
+        2: 'instagram',
+        3: 'youtube'
+    };
+    
+    socialLinks.forEach((link, index) => {
+        const platform = linkMap[index];
+        if (platform && developerSettings.socialLinks[platform]) {
+            link.href = developerSettings.socialLinks[platform];
+        }
+    });
+}
+
+// Developer Modal Functions
+function openDeveloperModal() {
+    document.getElementById('developer-password-modal').style.display = 'flex';
+    document.getElementById('developer-password').focus();
+}
+
+function closeDeveloperPasswordModal() {
+    document.getElementById('developer-password-modal').style.display = 'none';
+    document.getElementById('developer-password').value = '';
+    document.getElementById('password-error').style.display = 'none';
+}
+
+function checkDeveloperPassword() {
+    const password = document.getElementById('developer-password').value;
+    const errorDiv = document.getElementById('password-error');
+    
+    if (password === 'zero') {
+        closeDeveloperPasswordModal();
+        openDeveloperPanel();
+    } else {
+        errorDiv.style.display = 'flex';
+        document.getElementById('developer-password').value = '';
+        setTimeout(() => {
+            errorDiv.style.display = 'none';
+        }, 3000);
+    }
+}
+
+function openDeveloperPanel() {
+    document.getElementById('developer-panel-modal').style.display = 'flex';
+    loadCurrentSettings();
+}
+
+function closeDeveloperPanel() {
+    document.getElementById('developer-panel-modal').style.display = 'none';
+}
+
+function loadCurrentSettings() {
+    // Load social links
+    document.getElementById('facebook-link').value = developerSettings.socialLinks.facebook;
+    document.getElementById('twitter-link').value = developerSettings.socialLinks.twitter;
+    document.getElementById('instagram-link').value = developerSettings.socialLinks.instagram;
+    document.getElementById('youtube-link').value = developerSettings.socialLinks.youtube;
+    
+    // Load colors
+    document.getElementById('primary-color').value = developerSettings.colors.primary;
+    document.getElementById('secondary-color').value = developerSettings.colors.secondary;
+    document.getElementById('accent-color').value = developerSettings.colors.accent;
+    
+    // Load background settings
+    document.getElementById('gradient-start').value = developerSettings.background.gradientStart;
+    document.getElementById('gradient-end').value = developerSettings.background.gradientEnd;
+    document.getElementById('gradient-direction').value = developerSettings.background.gradientDirection;
+    
+    // Set background type
+    document.querySelector(`input[value="${developerSettings.background.type}"]`).checked = true;
+    showBackgroundControls(developerSettings.background.type);
+}
+
+// Tab switching
+function switchTab(tabName) {
+    // Hide all tabs
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Remove active class from all buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Show selected tab
+    document.getElementById(tabName + '-tab').classList.add('active');
+    
+    // Add active class to clicked button
+    event.target.classList.add('active');
+}
+
+// Social Links Functions
+function saveSocialLinks() {
+    developerSettings.socialLinks.facebook = document.getElementById('facebook-link').value;
+    developerSettings.socialLinks.twitter = document.getElementById('twitter-link').value;
+    developerSettings.socialLinks.instagram = document.getElementById('instagram-link').value;
+    developerSettings.socialLinks.youtube = document.getElementById('youtube-link').value;
+    
+    saveDeveloperSettings();
+    applySocialLinks();
+    showToast('تم حفظ روابط التواصل الاجتماعي بنجاح!', 'success');
+}
+
+// Color Functions
+function saveColors() {
+    developerSettings.colors.primary = document.getElementById('primary-color').value;
+    developerSettings.colors.secondary = document.getElementById('secondary-color').value;
+    developerSettings.colors.accent = document.getElementById('accent-color').value;
+    
+    saveDeveloperSettings();
+    applySettings();
+    showToast('تم تطبيق الألوان الجديدة بنجاح!', 'success');
+}
+
+function applyColorPreset(preset) {
+    const presets = {
+        blue: {
+            primary: '#667eea',
+            secondary: '#764ba2',
+            accent: '#f093fb'
+        },
+        purple: {
+            primary: '#a855f7',
+            secondary: '#ec4899',
+            accent: '#8b5cf6'
+        },
+        green: {
+            primary: '#10b981',
+            secondary: '#059669',
+            accent: '#34d399'
+        }
+    };
+    
+    if (presets[preset]) {
+        document.getElementById('primary-color').value = presets[preset].primary;
+        document.getElementById('secondary-color').value = presets[preset].secondary;
+        document.getElementById('accent-color').value = presets[preset].accent;
+        
+        developerSettings.colors = presets[preset];
+        saveDeveloperSettings();
+        applySettings();
+        showToast(`تم تطبيق مجموعة الألوان ${preset === 'blue' ? 'الأزرق الكلاسيكي' : preset === 'purple' ? 'البنفسجي الوردي' : 'الأخضر الطبيعي'}!`, 'success');
+    }
+}
+
+// Background Functions
+function saveBackground() {
+    const bgType = document.querySelector('input[name="bg-type"]:checked').value;
+    
+    developerSettings.background.type = bgType;
+    
+    if (bgType === 'gradient') {
+        developerSettings.background.gradientStart = document.getElementById('gradient-start').value;
+        developerSettings.background.gradientEnd = document.getElementById('gradient-end').value;
+        developerSettings.background.gradientDirection = document.getElementById('gradient-direction').value;
+    }
+    
+    saveDeveloperSettings();
+    applyBackgroundSettings();
+    showToast('تم تطبيق الخلفية الجديدة بنجاح!', 'success');
+}
+
+function selectPattern(pattern) {
+    developerSettings.background.pattern = pattern;
+    document.querySelectorAll('.pattern-item').forEach(item => {
+        item.classList.remove('selected');
+    });
+    event.target.closest('.pattern-item').classList.add('selected');
+}
+
+// Background type change handler
+document.addEventListener('change', function(e) {
+    if (e.target.name === 'bg-type') {
+        showBackgroundControls(e.target.value);
+    }
+});
+
+function showBackgroundControls(type) {
+    document.querySelectorAll('.bg-controls').forEach(control => {
+        control.style.display = 'none';
+    });
+    
+    document.getElementById(type + '-controls').style.display = 'block';
+}
+
+// Background image upload
+document.addEventListener('change', function(e) {
+    if (e.target.id === 'bg-image-input') {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                developerSettings.background.image = e.target.result;
+                saveDeveloperSettings();
+                applyBackgroundSettings();
+                showToast('تم رفع صورة الخلفية بنجاح!', 'success');
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+});
+
+// Search and Filter Functions
+let filteredImages = [...sampleImages];
+
+function searchImages() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const clearBtn = document.querySelector('.clear-search');
+    
+    if (searchTerm.length > 0) {
+        clearBtn.style.display = 'block';
+        filteredImages = sampleImages.filter(image => 
+            image.title.toLowerCase().includes(searchTerm) ||
+            image.description.toLowerCase().includes(searchTerm) ||
+            image.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+        );
+    } else {
+        clearBtn.style.display = 'none';
+        filteredImages = [...sampleImages];
+    }
+    
+    applyFilters();
+}
+
+function clearSearch() {
+    document.getElementById('search-input').value = '';
+    document.querySelector('.clear-search').style.display = 'none';
+    filteredImages = [...sampleImages];
+    applyFilters();
+}
+
+function applyFilters() {
+    const categoryFilter = document.getElementById('category-filter').value;
+    const typeFilter = document.getElementById('type-filter').value;
+    const brandFilter = document.getElementById('brand-filter').value;
+    
+    let filtered = [...filteredImages];
+    
+    if (categoryFilter !== 'all') {
+        filtered = filtered.filter(image => image.category === categoryFilter);
+    }
+    
+    if (typeFilter !== 'all') {
+        filtered = filtered.filter(image => image.type === typeFilter);
+    }
+    
+    if (brandFilter !== 'all') {
+        filtered = filtered.filter(image => image.brand === brandFilter);
+    }
+    
+    displayFilteredImages(filtered);
+}
+
+function displayFilteredImages(images) {
+    const galleryGrid = document.getElementById('gallery-grid');
+    
+    if (images.length === 0) {
+        galleryGrid.innerHTML = `
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <h3>لا توجد نتائج</h3>
+                <p>لم يتم العثور على صور تطابق معايير البحث</p>
+            </div>
+        `;
+        return;
+    }
+    
+    galleryGrid.innerHTML = '';
+    
+    images.forEach((image, index) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.onclick = () => openImageViewer(index, images);
+        
+        galleryItem.innerHTML = `
+            <img src="${image.src}" alt="${image.title}" loading="lazy">
+            <div class="image-tags">
+                ${image.tags.map(tag => `<span class="image-tag">${tag}</span>`).join('')}
+            </div>
+            <div class="gallery-info">
+                <h4>${image.title}</h4>
+                <p>${image.description}</p>
+                <div class="image-meta">
+                    <span class="category">${getCategoryName(image.category)}</span>
+                    <span class="brand">${getBrandName(image.brand)}</span>
+                </div>
+            </div>
+        `;
+        
+        galleryGrid.appendChild(galleryItem);
+    });
+    
+    // Update current gallery for viewer
+    galleryImages = images;
+}
+
+function getCategoryName(category) {
+    const categories = {
+        'nature': 'طبيعة',
+        'landscape': 'مناظر طبيعية',
+        'architecture': 'عمارة',
+        'portrait': 'بورتريه',
+        'urban': 'حضري',
+        'wildlife': 'حياة برية'
+    };
+    return categories[category] || category;
+}
+
+function getBrandName(brand) {
+    const brands = {
+        'canon': 'كانون',
+        'nikon': 'نيكون',
+        'sony': 'سوني',
+        'fuji': 'فوجي',
+        'olympus': 'أوليمبوس',
+        'digital': 'رقمي'
+    };
+    return brands[brand] || brand;
+}
+
+// Filter change handlers
+document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('filter-select')) {
+        applyFilters();
+    }
+});
+
+// Toast notification function
+function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = `message-toast ${type}`;
+    toast.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}"></i>
+        ${message}
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.animation = 'slideOutRight 0.5s ease-out forwards';
+        setTimeout(() => {
+            document.body.removeChild(toast);
+        }, 500);
+    }, 3000);
+}
+
+// Enhanced image viewer for filtered results
+function openImageViewer(index, images = galleryImages) {
+    currentImageIndex = index;
+    galleryImages = images;
+    
+    const modal = document.getElementById('image-viewer');
+    const viewer = modal.querySelector('.image-viewer');
+    const image = images[index];
+    
+    viewer.innerHTML = `
+        <div class="viewer-header">
+            <div class="viewer-info">
+                <h3>${image.title}</h3>
+                <p>${image.description}</p>
+                <div class="viewer-meta">
+                    <span class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        ${getCategoryName(image.category)}
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-camera"></i>
+                        ${getBrandName(image.brand)}
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-image"></i>
+                        ${image.type === 'photo' ? 'صورة' : image.type === 'digital' ? 'رقمي' : image.type}
+                    </span>
+                </div>
+                <div class="viewer-tags">
+                    ${image.tags.map(tag => `<span class="viewer-tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+            <button class="close-viewer" onclick="closeImageViewer()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="viewer-content">
+            <button class="nav-btn prev-btn" onclick="previousImage()" ${index === 0 ? 'disabled' : ''}>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <img src="${image.src}" alt="${image.title}">
+            <button class="nav-btn next-btn" onclick="nextImage()" ${index === images.length - 1 ? 'disabled' : ''}>
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+        <div class="viewer-footer">
+            <span class="image-counter">${index + 1} من ${images.length}</span>
+        </div>
+    `;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Initialize enhanced features
+document.addEventListener('DOMContentLoaded', function() {
+    // Load developer settings
+    loadDeveloperSettings();
+    
+    // Initialize gallery with all images
+    displayFilteredImages(sampleImages);
+    
+    // Add keyboard support for developer password
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const passwordModal = document.getElementById('developer-password-modal');
+            if (passwordModal.style.display === 'flex') {
+                checkDeveloperPassword();
+            }
+        }
+    });
+    
+    // Add CSS for no results
+    if (!document.querySelector('.no-results-style')) {
+        const style = document.createElement('style');
+        style.className = 'no-results-style';
+        style.textContent = `
+            .no-results {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding: 60px 20px;
+                color: var(--text-light);
+            }
+            
+            .no-results i {
+                font-size: 4rem;
+                color: var(--accent-color);
+                margin-bottom: 20px;
+                opacity: 0.7;
+            }
+            
+            .no-results h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .no-results p {
+                opacity: 0.8;
+                font-size: 1.1rem;
+            }
+            
+            .viewer-meta {
+                display: flex;
+                gap: 20px;
+                margin: 15px 0;
+                flex-wrap: wrap;
+            }
+            
+            .meta-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 0.9rem;
+            }
+            
+            .viewer-tags {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+                margin-top: 15px;
+            }
+            
+            .viewer-tag {
+                background: var(--gradient-accent);
+                color: var(--text-light);
+                padding: 4px 12px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+            }
+            
+            .viewer-footer {
+                text-align: center;
+                padding: 15px;
+                color: rgba(255, 255, 255, 0.8);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        `;
+        document.head.appendChild(style);
+    }
+});
 

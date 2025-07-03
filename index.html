@@ -55,6 +55,10 @@
                 <a href="#gallery" class="nav-link">المعرض</a>
                 <a href="#about" class="nav-link">حول</a>
                 <a href="#contact" class="nav-link">تواصل</a>
+                <a href="#" class="nav-link developer-link" onclick="openDeveloperModal()">
+                    <i class="fas fa-cog"></i>
+                    المطور
+                </a>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -120,6 +124,16 @@
 
             <!-- Gallery Controls -->
             <div class="gallery-controls glass-morphism">
+                <div class="search-section">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="البحث في الصور..." onkeyup="searchImages()">
+                        <button class="clear-search" onclick="clearSearch()" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="view-modes">
                     <button class="view-btn active" data-view="masonry">
                         <i class="fas fa-th-large"></i>
@@ -134,13 +148,33 @@
                         عرض تقديمي
                     </button>
                 </div>
+                
                 <div class="filter-controls">
-                    <select class="filter-select">
+                    <select class="filter-select" id="category-filter">
                         <option value="all">جميع الفئات</option>
                         <option value="nature">طبيعة</option>
                         <option value="architecture">عمارة</option>
                         <option value="portrait">بورتريه</option>
                         <option value="landscape">مناظر طبيعية</option>
+                        <option value="urban">حضري</option>
+                        <option value="wildlife">حياة برية</option>
+                    </select>
+                    
+                    <select class="filter-select" id="type-filter">
+                        <option value="all">جميع الأنواع</option>
+                        <option value="photo">صورة</option>
+                        <option value="digital">رقمي</option>
+                        <option value="painting">لوحة</option>
+                        <option value="sketch">رسم</option>
+                    </select>
+                    
+                    <select class="filter-select" id="brand-filter">
+                        <option value="all">جميع الماركات</option>
+                        <option value="canon">كانون</option>
+                        <option value="nikon">نيكون</option>
+                        <option value="sony">سوني</option>
+                        <option value="fuji">فوجي</option>
+                        <option value="olympus">أوليمبوس</option>
                     </select>
                 </div>
             </div>
@@ -174,6 +208,216 @@
                     <div class="progress-fill"></div>
                 </div>
                 <span class="progress-text">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developer Password Modal -->
+    <div id="developer-password-modal" class="modal-overlay">
+        <div class="developer-password-modal glass-morphism">
+            <div class="modal-header">
+                <h3>
+                    <i class="fas fa-lock"></i>
+                    دخول المطور
+                </h3>
+                <button class="close-btn" onclick="closeDeveloperPasswordModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="password-content">
+                <div class="password-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <p>يرجى إدخال كلمة السر للوصول إلى لوحة تحكم المطور</p>
+                <div class="password-input-group">
+                    <input type="password" id="developer-password" placeholder="كلمة السر">
+                    <button onclick="checkDeveloperPassword()">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                <div id="password-error" class="password-error" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    كلمة السر غير صحيحة
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developer Control Panel Modal -->
+    <div id="developer-panel-modal" class="modal-overlay">
+        <div class="developer-panel-modal glass-morphism">
+            <div class="modal-header">
+                <h3>
+                    <i class="fas fa-cogs"></i>
+                    لوحة تحكم المطور
+                </h3>
+                <button class="close-btn" onclick="closeDeveloperPanel()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="developer-tabs">
+                <button class="tab-btn active" onclick="switchTab('social')">
+                    <i class="fas fa-share-alt"></i>
+                    التواصل الاجتماعي
+                </button>
+                <button class="tab-btn" onclick="switchTab('colors')">
+                    <i class="fas fa-palette"></i>
+                    الألوان
+                </button>
+                <button class="tab-btn" onclick="switchTab('background')">
+                    <i class="fas fa-image"></i>
+                    الخلفية
+                </button>
+            </div>
+            
+            <!-- Social Media Tab -->
+            <div id="social-tab" class="tab-content active">
+                <h4>تعديل روابط التواصل الاجتماعي</h4>
+                <div class="social-inputs">
+                    <div class="input-group">
+                        <label>
+                            <i class="fab fa-facebook"></i>
+                            فيسبوك
+                        </label>
+                        <input type="url" id="facebook-link" placeholder="https://facebook.com/yourpage">
+                    </div>
+                    <div class="input-group">
+                        <label>
+                            <i class="fab fa-twitter"></i>
+                            تويتر
+                        </label>
+                        <input type="url" id="twitter-link" placeholder="https://twitter.com/yourhandle">
+                    </div>
+                    <div class="input-group">
+                        <label>
+                            <i class="fab fa-instagram"></i>
+                            إنستغرام
+                        </label>
+                        <input type="url" id="instagram-link" placeholder="https://instagram.com/yourhandle">
+                    </div>
+                    <div class="input-group">
+                        <label>
+                            <i class="fab fa-youtube"></i>
+                            يوتيوب
+                        </label>
+                        <input type="url" id="youtube-link" placeholder="https://youtube.com/yourchannel">
+                    </div>
+                </div>
+                <button class="save-btn" onclick="saveSocialLinks()">
+                    <i class="fas fa-save"></i>
+                    حفظ التغييرات
+                </button>
+            </div>
+
+            <!-- Colors Tab -->
+            <div id="colors-tab" class="tab-content">
+                <h4>تخصيص الألوان</h4>
+                <div class="color-inputs">
+                    <div class="input-group">
+                        <label>اللون الأساسي</label>
+                        <input type="color" id="primary-color" value="#667eea">
+                    </div>
+                    <div class="input-group">
+                        <label>اللون الثانوي</label>
+                        <input type="color" id="secondary-color" value="#764ba2">
+                    </div>
+                    <div class="input-group">
+                        <label>اللون المميز</label>
+                        <input type="color" id="accent-color" value="#f093fb">
+                    </div>
+                </div>
+                <div class="color-presets">
+                    <h5>الألوان المحفوظة</h5>
+                    <div class="preset-colors">
+                        <div class="preset-item" onclick="applyColorPreset('blue')">
+                            <div class="preset-preview" style="background: linear-gradient(135deg, #667eea, #764ba2)"></div>
+                            <span>أزرق كلاسيكي</span>
+                        </div>
+                        <div class="preset-item" onclick="applyColorPreset('purple')">
+                            <div class="preset-preview" style="background: linear-gradient(135deg, #a855f7, #ec4899)"></div>
+                            <span>بنفسجي وردي</span>
+                        </div>
+                        <div class="preset-item" onclick="applyColorPreset('green')">
+                            <div class="preset-preview" style="background: linear-gradient(135deg, #10b981, #059669)"></div>
+                            <span>أخضر طبيعي</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="save-btn" onclick="saveColors()">
+                    <i class="fas fa-save"></i>
+                    تطبيق الألوان
+                </button>
+            </div>
+
+            <!-- Background Tab -->
+            <div id="background-tab" class="tab-content">
+                <h4>تخصيص الخلفية</h4>
+                <div class="background-options">
+                    <div class="bg-option">
+                        <input type="radio" name="bg-type" value="gradient" id="bg-gradient" checked>
+                        <label for="bg-gradient">تدرج لوني</label>
+                    </div>
+                    <div class="bg-option">
+                        <input type="radio" name="bg-type" value="image" id="bg-image">
+                        <label for="bg-image">صورة خلفية</label>
+                    </div>
+                    <div class="bg-option">
+                        <input type="radio" name="bg-type" value="pattern" id="bg-pattern">
+                        <label for="bg-pattern">نمط هندسي</label>
+                    </div>
+                </div>
+                
+                <div id="gradient-controls" class="bg-controls">
+                    <div class="input-group">
+                        <label>اللون الأول</label>
+                        <input type="color" id="gradient-start" value="#667eea">
+                    </div>
+                    <div class="input-group">
+                        <label>اللون الثاني</label>
+                        <input type="color" id="gradient-end" value="#764ba2">
+                    </div>
+                    <div class="input-group">
+                        <label>الاتجاه</label>
+                        <select id="gradient-direction">
+                            <option value="135deg">قطري (افتراضي)</option>
+                            <option value="90deg">عمودي</option>
+                            <option value="0deg">أفقي</option>
+                            <option value="45deg">قطري معكوس</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="image-controls" class="bg-controls" style="display: none;">
+                    <div class="upload-bg-area">
+                        <input type="file" id="bg-image-input" accept="image/*">
+                        <div class="upload-bg-content">
+                            <i class="fas fa-image"></i>
+                            <p>اختر صورة خلفية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pattern-controls" class="bg-controls" style="display: none;">
+                    <div class="pattern-grid">
+                        <div class="pattern-item" onclick="selectPattern('dots')">
+                            <div class="pattern-preview dots-pattern"></div>
+                            <span>نقاط</span>
+                        </div>
+                        <div class="pattern-item" onclick="selectPattern('lines')">
+                            <div class="pattern-preview lines-pattern"></div>
+                            <span>خطوط</span>
+                        </div>
+                        <div class="pattern-item" onclick="selectPattern('grid')">
+                            <div class="pattern-preview grid-pattern"></div>
+                            <span>شبكة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="save-btn" onclick="saveBackground()">
+                    <i class="fas fa-save"></i>
+                    تطبيق الخلفية
+                </button>
             </div>
         </div>
     </div>
