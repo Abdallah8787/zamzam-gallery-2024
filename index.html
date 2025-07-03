@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض زمزم - Zamzam Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-container"></div>
+    
+    <!-- Welcome Message Modal -->
+    <div id="welcome-modal" class="modal-overlay">
+        <div class="welcome-modal">
+            <button class="close-btn" id="close-welcome">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="welcome-content">
+                <div class="welcome-icon">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <h2>مرحباً بك في معرض زمزم</h2>
+                <p>اكتشف عالماً من الجمال والإبداع البصري مع تجربة تصفح فريدة ومتطورة</p>
+                <div class="welcome-features">
+                    <div class="feature-item">
+                        <i class="fas fa-magic"></i>
+                        <span>تأثيرات بصرية متطورة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-images"></i>
+                        <span>معرض تفاعلي</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>تصميم متجاوب</span>
+                    </div>
+                </div>
+                <button class="start-btn" id="start-exploring">ابدأ الاستكشاف</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-morphism">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-gem"></i>
+                <span>معرض زمزم</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">الرئيسية</a>
+                <a href="#gallery" class="nav-link">المعرض</a>
+                <a href="#about" class="nav-link">حول</a>
+                <a href="#contact" class="nav-link">تواصل</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">معرض زمزم</span>
+                    <span class="subtitle">للإبداع البصري</span>
+                </h1>
+                <p class="hero-description">
+                    تجربة فريدة لعرض الصور والفيديوهات بتقنيات متطورة وتأثيرات بصرية خلابة
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToGallery()">
+                        <i class="fas fa-play"></i>
+                        استكشف المعرض
+                    </button>
+                    <button class="btn-secondary" onclick="openUploadModal()">
+                        <i class="fas fa-upload"></i>
+                        رفع الصور
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-gallery">
+                    <div class="gallery-card" style="--delay: 0s">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="صورة طبيعية">
+                    </div>
+                    <div class="gallery-card" style="--delay: 0.5s">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300&h=200&fit=crop" alt="غابة">
+                    </div>
+                    <div class="gallery-card" style="--delay: 1s">
+                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&h=200&fit=crop" alt="بحيرة">
+                    </div>
+                    <div class="gallery-card" style="--delay: 1.5s">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="جبال">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">معرض الصور</h2>
+                <p class="section-subtitle">مجموعة مختارة من أجمل الصور والمناظر الطبيعية</p>
+            </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls glass-morphism">
+                <div class="view-modes">
+                    <button class="view-btn active" data-view="masonry">
+                        <i class="fas fa-th-large"></i>
+                        شبكي
+                    </button>
+                    <button class="view-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                        منتظم
+                    </button>
+                    <button class="view-btn" data-view="slideshow">
+                        <i class="fas fa-play"></i>
+                        عرض تقديمي
+                    </button>
+                </div>
+                <div class="filter-controls">
+                    <select class="filter-select">
+                        <option value="all">جميع الفئات</option>
+                        <option value="nature">طبيعة</option>
+                        <option value="architecture">عمارة</option>
+                        <option value="portrait">بورتريه</option>
+                        <option value="landscape">مناظر طبيعية</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Modal -->
+    <div id="upload-modal" class="modal-overlay">
+        <div class="upload-modal glass-morphism">
+            <div class="modal-header">
+                <h3>رفع الصور</h3>
+                <button class="close-btn" onclick="closeUploadModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="upload-area" id="upload-area">
+                <div class="upload-content">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h4>اسحب الصور هنا أو انقر للاختيار</h4>
+                    <p>يدعم JPG, PNG, GIF, WebP</p>
+                    <input type="file" id="file-input" multiple accept="image/*">
+                </div>
+            </div>
+            <div class="upload-progress" id="upload-progress" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="progress-text">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div id="image-viewer" class="modal-overlay">
+        <div class="image-viewer">
+            <button class="close-btn" onclick="closeImageViewer()">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="nav-btn prev-btn" onclick="previousImage()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-btn next-btn" onclick="nextImage()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="image-container">
+                <img id="viewer-image" src="" alt="">
+            </div>
+            <div class="image-info glass-morphism">
+                <h4 id="image-title">عنوان الصورة</h4>
+                <p id="image-description">وصف الصورة</p>
+                <div class="image-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-heart"></i>
+                        إعجاب
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-share"></i>
+                        مشاركة
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-download"></i>
+                        تحميل
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">عن معرض زمزم</h2>
+                    <p>معرض زمزم هو منصة متطورة لعرض وإدارة الصور والفيديوهات بتقنيات حديثة وتأثيرات بصرية خلابة. نهدف إلى توفير تجربة فريدة ومميزة لعشاق التصوير والفن البصري.</p>
+                    <div class="features-grid">
+                        <div class="feature-card glass-morphism">
+                            <i class="fas fa-magic"></i>
+                            <h4>تأثيرات متطورة</h4>
+                            <p>تأثيرات Glass Morphism وParticle Background</p>
+                        </div>
+                        <div class="feature-card glass-morphism">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>تصميم متجاوب</h4>
+                            <p>يعمل بسلاسة على جميع الأجهزة</p>
+                        </div>
+                        <div class="feature-card glass-morphism">
+                            <i class="fas fa-bolt"></i>
+                            <h4>أداء سريع</h4>
+                            <p>تحميل سريع وتجربة سلسة</p>
+                        </div>
+                        <div class="feature-card glass-morphism">
+                            <i class="fas fa-palette"></i>
+                            <h4>تخصيص كامل</h4>
+                            <p>إمكانيات تخصيص واسعة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p class="section-subtitle">نحن هنا لمساعدتك في أي استفسار</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item glass-morphism">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@zamzamgallery.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-morphism">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>+966 50 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-morphism">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>الرياض، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form glass-morphism">
+                    <div class="form-group">
+                        <input type="text" placeholder="الاسم" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="الرسالة" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        إرسال الرسالة
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-gem"></i>
+                    <span>معرض زمزم</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">الرئيسية</a>
+                    <a href="#gallery">المعرض</a>
+                    <a href="#about">حول</a>
+                    <a href="#contact">تواصل</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 معرض زمزم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
