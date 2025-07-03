@@ -1283,3 +1283,82 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+// Fixed Back to Top Button Functions
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function toggleBackToTopButton() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollPosition > 300) {
+        if (!backToTopBtn.classList.contains('show')) {
+            backToTopBtn.classList.add('show');
+            backToTopBtn.classList.add('animate-in');
+            setTimeout(() => {
+                backToTopBtn.classList.remove('animate-in');
+            }, 600);
+        }
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+}
+
+// Enhanced scroll event listener
+let scrollTimeout;
+window.addEventListener('scroll', function() {
+    // Toggle back to top button
+    toggleBackToTopButton();
+    
+    // Throttle scroll events for better performance
+    if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+    }
+    
+    scrollTimeout = setTimeout(() => {
+        // Add any additional scroll-based functionality here
+        updateScrollProgress();
+    }, 10);
+});
+
+// Optional: Add scroll progress indicator
+function updateScrollProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 100;
+    
+    // You can use this to show scroll progress if needed
+    // For example, update a progress bar or change button appearance
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn && scrollProgress > 50) {
+        backToTopBtn.style.background = `conic-gradient(var(--accent-color) ${scrollProgress * 3.6}deg, var(--primary-color) 0deg)`;
+    } else if (backToTopBtn) {
+        backToTopBtn.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
+    }
+}
+
+// Initialize back to top button on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial check for back to top button
+    toggleBackToTopButton();
+    
+    // Add smooth scroll behavior to all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+
